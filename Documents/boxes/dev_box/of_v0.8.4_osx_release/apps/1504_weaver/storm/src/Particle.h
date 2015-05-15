@@ -1,6 +1,9 @@
 #pragma once
 #include "ofMain.h"
 
+#define SPD 1.0 //SpeedRate
+//#define LOOP_OF_EDGE
+
 class Particle {
 
 public:

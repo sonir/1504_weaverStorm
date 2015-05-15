@@ -41,8 +41,8 @@ void Particle::updateForce(){
 // 位置の更新
 void Particle::updatePos(){
     if (!bFixed) {
-        velocity += force;
-        position += velocity;
+        velocity += force*SPD;
+        position += velocity*SPD;
     }
 }
 
@@ -89,6 +89,8 @@ void Particle::bounceOffWalls(){
 }
 
 void Particle::throughOfWalls(){
+    
+#ifndef LOOP_OF_EDGE
     float minx = 0;
     float miny = 0;
     float maxx = ofGetWidth();
@@ -105,6 +107,7 @@ void Particle::throughOfWalls(){
     if (position.y > maxy) {
         position.y = miny;
     }
+#endif
 }
 
 // 描画
