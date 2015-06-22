@@ -64,7 +64,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 420.5, 39.0, 154.0, 18.0 ],
-					"text" : "/sjq/performance/blink/hit 1"
+					"text" : "/sjq/performance/blink/hit 0"
 				}
 
 			}

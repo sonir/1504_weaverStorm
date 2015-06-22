@@ -27,6 +27,7 @@ void PerformanceManager::fireMessage(ofxOscMessage *m){
         if(phase==CATCHBALL){ //This massage was utilized by CATCHBALL only.
             string adr = "/fis/comes";
             fis->send(adr,(player_type_e)m->getArgAsInt32(0));
+            ableton->send(CH_CATCH_BALL_TRIGGER_FOR_M4L, (int)ofRandom(7));
         }
         
     } else if(m->getAddress() == "/sjq/performance/blink/hit"){
@@ -92,7 +93,7 @@ void PerformanceManager::atkEvent(player_type_e player, phase_e ph){
     switch(ph){
             
         case GLITCH:
-            if(note<0)note =0;
+            if(note<0)note =-1;
             mobile->send("/sjq/mobile/glitch/bang" , player, note);
             break;
 
@@ -105,6 +106,8 @@ void PerformanceManager::atkEvent(player_type_e player, phase_e ph){
             break;
 
         case CALM:
+            mobile->send("/sjq/mobile/calm/bang" , player);
+            fis->send("/fis/go", player, WHITE);
             break;
             
         case FINAL:
