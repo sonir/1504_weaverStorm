@@ -11,10 +11,15 @@ void ofApp::setup(){
     osc = new Osc(OSC_PORT,this);
 
     //Yagi
+    notice = slNotice::instance();
+    notice->addEvent("changeScreenColor", this);
     yagi.setup();
     
     sender.setup("224.0.0.1", SEND_OSC_PORT);
-//    test();
+
+#ifdef DEBUG
+    test();
+#endif
 
     
 }
@@ -32,8 +37,9 @@ void ofApp::update(){
 void ofApp::draw(){
     ofBackground(0,0,0);
     
-    switch(yagi.sqcr.sc_color){
-            
+//    switch(yagi.sqcr.sc_color){
+    switch(sc_color){
+    
         case RED:
             ofBackground(255,0,0);
             break;
@@ -102,6 +108,17 @@ void ofApp::test(){
     sender.sendMessage(m);
 
     
+}
+
+//--------------------------------------------------------------
+void ofApp::event(event_type tag, void *param){
+    //using void type EXAMPLE: int *num = (int *)param;
+
+    if(tag=="changeScreenColor"){
+        color_e *tmp = (color_e *)param;
+        sc_color = *tmp;
+    }
+        
 }
 
 

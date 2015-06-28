@@ -44,11 +44,14 @@
 		E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */; };
 		E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E715D3B6510020DFD4 /* QTKit.framework */; };
 		E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F985F515E0DE99003869B5 /* Accelerate.framework */; };
+		F20320171B4028E800DECF95 /* SequenceData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F20320101B4028E800DECF95 /* SequenceData.cpp */; };
+		F20320181B4028E800DECF95 /* slSequencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F20320121B4028E800DECF95 /* slSequencer.cpp */; };
+		F203201E1B402A9100DECF95 /* SeqManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F203201C1B402A9100DECF95 /* SeqManager.cpp */; };
+		F203D68C1B3982F100DA5012 /* slNotice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F203D6801B3982F100DA5012 /* slNotice.cpp */; };
+		F203D68D1B3982F100DA5012 /* slObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F203D6821B3982F100DA5012 /* slObserver.cpp */; };
 		F2A554831B300D4E006871E4 /* Osc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2A554811B300D4E006871E4 /* Osc.cpp */; };
-		F2A554DD1B300D67006871E4 /* slOscManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2A554C41B300D67006871E4 /* slOscManager.cpp */; };
-		F2A5553B1B3027D8006871E4 /* Sequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2A555201B3027D8006871E4 /* Sequence.cpp */; };
-		F2A5553C1B3027D8006871E4 /* ygSequencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2A555221B3027D8006871E4 /* ygSequencer.cpp */; };
-		F2FFE5CD1B37EC0500C75F94 /* slAppManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2FFE5B31B37EC0500C75F94 /* slAppManager.cpp */; };
+		F2F833F71B397B3D006DE930 /* slAppManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2F833DD1B397B3D006DE930 /* slAppManager.cpp */; };
+		F2F834511B397B49006DE930 /* slOscManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2F834381B397B49006DE930 /* slOscManager.cpp */; };
 		F2FFE5D01B37EC4C00C75F94 /* Yagi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2FFE5CE1B37EC4C00C75F94 /* Yagi.cpp */; };
 		F2FFE62B1B37F2CF00C75F94 /* slChrono.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2FFE6121B37F2CF00C75F94 /* slChrono.cpp */; };
 /* End PBXBuildFile section */
@@ -144,17 +147,24 @@
 		E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		E7E077E715D3B6510020DFD4 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		E7F985F515E0DE99003869B5 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = /System/Library/Frameworks/Accelerate.framework; sourceTree = "<absolute>"; };
+		F20320101B4028E800DECF95 /* SequenceData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SequenceData.cpp; sourceTree = "<group>"; };
+		F20320111B4028E800DECF95 /* SequenceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequenceData.h; sourceTree = "<group>"; };
+		F20320121B4028E800DECF95 /* slSequencer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slSequencer.cpp; sourceTree = "<group>"; };
+		F20320131B4028E800DECF95 /* slSequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slSequencer.h; sourceTree = "<group>"; };
+		F20320141B4028E800DECF95 /* stino.settings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stino.settings; sourceTree = "<group>"; };
+		F203201C1B402A9100DECF95 /* SeqManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SeqManager.cpp; path = ../SeqManager.cpp; sourceTree = "<group>"; };
+		F203201D1B402A9100DECF95 /* SeqManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeqManager.h; path = ../SeqManager.h; sourceTree = "<group>"; };
+		F203D6801B3982F100DA5012 /* slNotice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slNotice.cpp; sourceTree = "<group>"; };
+		F203D6811B3982F100DA5012 /* slNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slNotice.h; sourceTree = "<group>"; };
+		F203D6821B3982F100DA5012 /* slObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slObserver.cpp; sourceTree = "<group>"; };
+		F203D6831B3982F100DA5012 /* slObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slObserver.h; sourceTree = "<group>"; };
 		F2A554811B300D4E006871E4 /* Osc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Osc.cpp; sourceTree = "<group>"; };
 		F2A554821B300D4E006871E4 /* Osc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Osc.h; sourceTree = "<group>"; };
-		F2A554C41B300D67006871E4 /* slOscManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slOscManager.cpp; sourceTree = "<group>"; };
-		F2A554C51B300D67006871E4 /* slOscManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slOscManager.h; sourceTree = "<group>"; };
-		F2A555201B3027D8006871E4 /* Sequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sequence.cpp; sourceTree = "<group>"; };
-		F2A555211B3027D8006871E4 /* Sequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sequence.h; sourceTree = "<group>"; };
-		F2A555221B3027D8006871E4 /* ygSequencer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ygSequencer.cpp; sourceTree = "<group>"; };
-		F2A555231B3027D8006871E4 /* ygSequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ygSequencer.h; sourceTree = "<group>"; };
-		F2FFE5B31B37EC0500C75F94 /* slAppManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slAppManager.cpp; sourceTree = "<group>"; };
-		F2FFE5B41B37EC0500C75F94 /* slAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slAppManager.h; sourceTree = "<group>"; };
-		F2FFE5B51B37EC0500C75F94 /* stino.settings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stino.settings; sourceTree = "<group>"; };
+		F2F833DD1B397B3D006DE930 /* slAppManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slAppManager.cpp; sourceTree = "<group>"; };
+		F2F833DE1B397B3D006DE930 /* slAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slAppManager.h; sourceTree = "<group>"; };
+		F2F833DF1B397B3D006DE930 /* stino.settings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stino.settings; sourceTree = "<group>"; };
+		F2F834381B397B49006DE930 /* slOscManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slOscManager.cpp; sourceTree = "<group>"; };
+		F2F834391B397B49006DE930 /* slOscManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slOscManager.h; sourceTree = "<group>"; };
 		F2FFE5CE1B37EC4C00C75F94 /* Yagi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Yagi.cpp; sourceTree = "<group>"; };
 		F2FFE5CF1B37EC4C00C75F94 /* Yagi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yagi.h; sourceTree = "<group>"; };
 		F2FFE6121B37F2CF00C75F94 /* slChrono.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slChrono.cpp; sourceTree = "<group>"; };
@@ -276,10 +286,11 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				F203200B1B4028E800DECF95 /* slSequencer */,
+				F203D6641B3982F000DA5012 /* slNotice */,
+				F2F833F81B397B49006DE930 /* slOscManager */,
+				F2F8339E1B397B3D006DE930 /* slAppManager */,
 				F2FFE5D21B37F2CF00C75F94 /* slChrono */,
-				F2FFE5741B37EC0500C75F94 /* slAppManager */,
-				F2A554E11B3027D8006871E4 /* ygSequencer */,
-				F2A554841B300D67006871E4 /* slOscManager */,
 				E6053AB7FEC63D5F83825B88 /* ofxOsc */,
 				1F4FB5C423662B96ADFDCC0B /* ofxXmlSettings */,
 			);
@@ -383,6 +394,8 @@
 				F2FFE5CF1B37EC4C00C75F94 /* Yagi.h */,
 				F2A554811B300D4E006871E4 /* Osc.cpp */,
 				F2A554821B300D4E006871E4 /* Osc.h */,
+				F203201C1B402A9100DECF95 /* SeqManager.cpp */,
+				F203201D1B402A9100DECF95 /* SeqManager.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -405,56 +418,80 @@
 			name = ofxOsc;
 			sourceTree = "<group>";
 		};
-		F2A554841B300D67006871E4 /* slOscManager */ = {
+		F203200B1B4028E800DECF95 /* slSequencer */ = {
 			isa = PBXGroup;
 			children = (
-				F2A554C31B300D67006871E4 /* src */,
+				F203200F1B4028E800DECF95 /* src */,
 			);
-			path = slOscManager;
+			name = slSequencer;
+			path = ../../../addons/slSequencer;
 			sourceTree = "<group>";
 		};
-		F2A554C31B300D67006871E4 /* src */ = {
+		F203200F1B4028E800DECF95 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				F2A554C41B300D67006871E4 /* slOscManager.cpp */,
-				F2A554C51B300D67006871E4 /* slOscManager.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		F2A554E11B3027D8006871E4 /* ygSequencer */ = {
-			isa = PBXGroup;
-			children = (
-				F2A5551F1B3027D8006871E4 /* src */,
-			);
-			path = ygSequencer;
-			sourceTree = "<group>";
-		};
-		F2A5551F1B3027D8006871E4 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				F2A555221B3027D8006871E4 /* ygSequencer.cpp */,
-				F2A555231B3027D8006871E4 /* ygSequencer.h */,
-				F2A555201B3027D8006871E4 /* Sequence.cpp */,
-				F2A555211B3027D8006871E4 /* Sequence.h */,
+				F20320101B4028E800DECF95 /* SequenceData.cpp */,
+				F20320111B4028E800DECF95 /* SequenceData.h */,
+				F20320121B4028E800DECF95 /* slSequencer.cpp */,
+				F20320131B4028E800DECF95 /* slSequencer.h */,
+				F20320141B4028E800DECF95 /* stino.settings */,
 			);
 			path = src;
 			sourceTree = "<group>";
 		};
-		F2FFE5741B37EC0500C75F94 /* slAppManager */ = {
+		F203D6641B3982F000DA5012 /* slNotice */ = {
 			isa = PBXGroup;
 			children = (
-				F2FFE5B21B37EC0500C75F94 /* src */,
+				F203D67F1B3982F000DA5012 /* src */,
 			);
-			path = slAppManager;
+			name = slNotice;
+			path = ../../../addons/slNotice;
 			sourceTree = "<group>";
 		};
-		F2FFE5B21B37EC0500C75F94 /* src */ = {
+		F203D67F1B3982F000DA5012 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				F2FFE5B31B37EC0500C75F94 /* slAppManager.cpp */,
-				F2FFE5B41B37EC0500C75F94 /* slAppManager.h */,
-				F2FFE5B51B37EC0500C75F94 /* stino.settings */,
+				F203D6801B3982F100DA5012 /* slNotice.cpp */,
+				F203D6811B3982F100DA5012 /* slNotice.h */,
+				F203D6821B3982F100DA5012 /* slObserver.cpp */,
+				F203D6831B3982F100DA5012 /* slObserver.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		F2F8339E1B397B3D006DE930 /* slAppManager */ = {
+			isa = PBXGroup;
+			children = (
+				F2F833DC1B397B3D006DE930 /* src */,
+			);
+			name = slAppManager;
+			path = ../../../addons/slAppManager;
+			sourceTree = "<group>";
+		};
+		F2F833DC1B397B3D006DE930 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F2F833DD1B397B3D006DE930 /* slAppManager.cpp */,
+				F2F833DE1B397B3D006DE930 /* slAppManager.h */,
+				F2F833DF1B397B3D006DE930 /* stino.settings */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		F2F833F81B397B49006DE930 /* slOscManager */ = {
+			isa = PBXGroup;
+			children = (
+				F2F834371B397B49006DE930 /* src */,
+			);
+			name = slOscManager;
+			path = ../../../addons/slOscManager;
+			sourceTree = "<group>";
+		};
+		F2F834371B397B49006DE930 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F2F834381B397B49006DE930 /* slOscManager.cpp */,
+				F2F834391B397B49006DE930 /* slOscManager.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -584,28 +621,31 @@
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
-				F2A554DD1B300D67006871E4 /* slOscManager.cpp in Sources */,
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,
 				640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */,
 				8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
+				F20320181B4028E800DECF95 /* slSequencer.cpp in Sources */,
+				F2F834511B397B49006DE930 /* slOscManager.cpp in Sources */,
 				510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */,
 				A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */,
 				F2FFE62B1B37F2CF00C75F94 /* slChrono.cpp in Sources */,
+				F20320171B4028E800DECF95 /* SequenceData.cpp in Sources */,
 				28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */,
-				F2A5553C1B3027D8006871E4 /* ygSequencer.cpp in Sources */,
+				F2F833F71B397B3D006DE930 /* slAppManager.cpp in Sources */,
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
-				F2A5553B1B3027D8006871E4 /* Sequence.cpp in Sources */,
+				F203D68C1B3982F100DA5012 /* slNotice.cpp in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
+				F203D68D1B3982F100DA5012 /* slObserver.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
 				F2A554831B300D4E006871E4 /* Osc.cpp in Sources */,
+				F203201E1B402A9100DECF95 /* SeqManager.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
-				F2FFE5CD1B37EC0500C75F94 /* slAppManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +862,27 @@
 					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slChrono/libs/necessaryLib/lib/linux64,
 					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slChrono/libs/necessaryLib/lib/osx,
 					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slChrono/libs/necessaryLib/lib/win_cb,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/android/armeabi,
+					"/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/android/armeabi-v7a",
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/ios,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/linux,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/linux64,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/osx,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/win_cb,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/android/armeabi,
+					"/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/android/armeabi-v7a",
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/ios,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/linux,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/linux64,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/osx,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/win_cb,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/android/armeabi,
+					"/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/android/armeabi-v7a",
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/ios,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/linux,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/linux64,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/osx,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/win_cb,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				WRAPPER_EXTENSION = app;
@@ -942,6 +1003,27 @@
 					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slChrono/libs/necessaryLib/lib/linux64,
 					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slChrono/libs/necessaryLib/lib/osx,
 					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slChrono/libs/necessaryLib/lib/win_cb,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/android/armeabi,
+					"/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/android/armeabi-v7a",
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/ios,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/linux,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/linux64,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/osx,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slAppManager/libs/necessaryLib/lib/win_cb,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/android/armeabi,
+					"/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/android/armeabi-v7a",
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/ios,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/linux,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/linux64,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/osx,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slOscManager/libs/necessaryLib/lib/win_cb,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/android/armeabi,
+					"/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/android/armeabi-v7a",
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/ios,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/linux,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/linux64,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/osx,
+					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/ygSequencer/libs/necessaryLib/lib/win_cb,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

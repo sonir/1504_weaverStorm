@@ -11,13 +11,13 @@
 
 #include <stdio.h>
 #include "slAppManager.h"
-#include "ygSequencer.h"
+#include "SeqManager.h"
 
 
 class YagiApp : public slAppManager {
     
     public:
-        Sequencer sqcr;
+        SeqManager sqcr;
         void setup();
         void update();
     

@@ -18,7 +18,7 @@ void Osc::fireMessage(ofxOscMessage *m){
     }else if(m->getAddress() == "/seq/event"){
         
         cout << "/seq/event" << endl;
-        Sequence s;
+        SequenceData s;
         s.st = (time_t)m->getArgAsInt32(0);
         s.qtm_count = m->getArgAsInt32(1);
         
@@ -36,7 +36,6 @@ void Osc::fireMessage(ofxOscMessage *m){
         }
         
         ofapp->yagi.sqcr.sequences.push_back(s);
-//        s.print();
         
     }
     
