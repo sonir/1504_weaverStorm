@@ -1,7 +1,9 @@
 #pragma once
 
-#define SC_WIDTH 240
-#define SC_HEIGHT 240
+#define SC_WIDTH 1280
+#define SC_HEIGHT 720
+#define CIRCLE_SIZE 200
+
 
 #define OSC_PORT 7401
 //#define OSC_PORT 7402
@@ -9,8 +11,10 @@
 
 #include <vector>
 #include "ofMain.h"
+#include "slAdsr.h"
 #include "Osc.h"
 #include "Yagi.h"
+
 
 class Osc;
 
@@ -43,6 +47,7 @@ class ofApp : public ofBaseApp, slObserver{
 
         YagiApp yagi;
         slNotice *notice;
+        slAdsr adsr;
     
     private:
         Osc *osc;

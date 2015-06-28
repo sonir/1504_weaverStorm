@@ -17,7 +17,6 @@ void Osc::fireMessage(ofxOscMessage *m){
         
     }else if(m->getAddress() == "/seq/event"){
         
-        cout << "/seq/event" << endl;
         SequenceData s;
         s.st = (time_t)m->getArgAsInt32(0);
         s.qtm_count = m->getArgAsInt32(1);

@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "slSequencer.h"
 
+typedef enum {TEST2, FAST, MID, SLOW} command_e;
 typedef enum {RED,GREEN,BLUE,BLACK} color_e;
 
 class SeqManager : public slSequencer {

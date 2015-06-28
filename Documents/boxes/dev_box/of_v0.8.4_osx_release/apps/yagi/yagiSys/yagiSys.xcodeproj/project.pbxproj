@@ -49,6 +49,7 @@
 		F203201E1B402A9100DECF95 /* SeqManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F203201C1B402A9100DECF95 /* SeqManager.cpp */; };
 		F203D68C1B3982F100DA5012 /* slNotice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F203D6801B3982F100DA5012 /* slNotice.cpp */; };
 		F203D68D1B3982F100DA5012 /* slObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F203D6821B3982F100DA5012 /* slObserver.cpp */; };
+		F21FD9B11B40427200D63CFB /* slAdsr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F21FD99B1B40427200D63CFB /* slAdsr.cpp */; };
 		F2A554831B300D4E006871E4 /* Osc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2A554811B300D4E006871E4 /* Osc.cpp */; };
 		F2F833F71B397B3D006DE930 /* slAppManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2F833DD1B397B3D006DE930 /* slAppManager.cpp */; };
 		F2F834511B397B49006DE930 /* slOscManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2F834381B397B49006DE930 /* slOscManager.cpp */; };
@@ -158,6 +159,8 @@
 		F203D6811B3982F100DA5012 /* slNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slNotice.h; sourceTree = "<group>"; };
 		F203D6821B3982F100DA5012 /* slObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slObserver.cpp; sourceTree = "<group>"; };
 		F203D6831B3982F100DA5012 /* slObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slObserver.h; sourceTree = "<group>"; };
+		F21FD99B1B40427200D63CFB /* slAdsr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slAdsr.cpp; sourceTree = "<group>"; };
+		F21FD99C1B40427200D63CFB /* slAdsr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slAdsr.h; sourceTree = "<group>"; };
 		F2A554811B300D4E006871E4 /* Osc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Osc.cpp; sourceTree = "<group>"; };
 		F2A554821B300D4E006871E4 /* Osc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Osc.h; sourceTree = "<group>"; };
 		F2F833DD1B397B3D006DE930 /* slAppManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slAppManager.cpp; sourceTree = "<group>"; };
@@ -286,6 +289,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				F21FD9951B40427200D63CFB /* slAdsr */,
 				F203200B1B4028E800DECF95 /* slSequencer */,
 				F203D6641B3982F000DA5012 /* slNotice */,
 				F2F833F81B397B49006DE930 /* slOscManager */,
@@ -430,10 +434,10 @@
 		F203200F1B4028E800DECF95 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				F20320101B4028E800DECF95 /* SequenceData.cpp */,
-				F20320111B4028E800DECF95 /* SequenceData.h */,
 				F20320121B4028E800DECF95 /* slSequencer.cpp */,
 				F20320131B4028E800DECF95 /* slSequencer.h */,
+				F20320101B4028E800DECF95 /* SequenceData.cpp */,
+				F20320111B4028E800DECF95 /* SequenceData.h */,
 				F20320141B4028E800DECF95 /* stino.settings */,
 			);
 			path = src;
@@ -455,6 +459,24 @@
 				F203D6811B3982F100DA5012 /* slNotice.h */,
 				F203D6821B3982F100DA5012 /* slObserver.cpp */,
 				F203D6831B3982F100DA5012 /* slObserver.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		F21FD9951B40427200D63CFB /* slAdsr */ = {
+			isa = PBXGroup;
+			children = (
+				F21FD99A1B40427200D63CFB /* src */,
+			);
+			name = slAdsr;
+			path = ../../../addons/slAdsr;
+			sourceTree = "<group>";
+		};
+		F21FD99A1B40427200D63CFB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F21FD99B1B40427200D63CFB /* slAdsr.cpp */,
+				F21FD99C1B40427200D63CFB /* slAdsr.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -618,6 +640,7 @@
 			files = (
 				F2FFE5D01B37EC4C00C75F94 /* Yagi.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				F21FD9B11B40427200D63CFB /* slAdsr.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,

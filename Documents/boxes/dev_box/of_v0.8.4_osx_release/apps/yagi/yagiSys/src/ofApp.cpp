@@ -3,7 +3,10 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
+    //SetupScreen
     ofSetFrameRate(120);
+    ofBackground(0);
+    ofSetCircleResolution(50);
     
     //SetupNode (osc-hub)
     ofSystem("open ../../../data/launch");
@@ -13,6 +16,7 @@ void ofApp::setup(){
     //Yagi
     notice = slNotice::instance();
     notice->addEvent("changeScreenColor", this);
+    notice->addEvent("TRG_ADSR", this);
     yagi.setup();
     
     sender.setup("224.0.0.1", SEND_OSC_PORT);
@@ -37,30 +41,41 @@ void ofApp::update(){
 void ofApp::draw(){
     ofBackground(0,0,0);
     
-//    switch(yagi.sqcr.sc_color){
+    //Draw Color Rect
     switch(sc_color){
     
         case RED:
-            ofBackground(255,0,0);
+            ofSetColor(255,0,0);
+            ofRect(0.0f, 0.0f, 100.0f, 100.0f);
             break;
 
         case GREEN:
-            ofBackground(0, 255, 0);
+            ofSetColor(0, 255, 0);
+            ofRect(0.0f, 0.0f, 100.0f, 100.0f);
             break;
 
         case BLUE:
-            ofBackground(0, 0, 255);
+            ofSetColor(0, 0, 255);
+            ofRect(0.0f, 0.0f, 100.0f, 100.0f);
             break;
 
         case BLACK:
-            ofBackground(0, 0, 0);
+            ofSetColor(0, 0, 0);
+            ofRect(0.0f, 0.0f, 100.0f, 100.0f);
             break;
             
         default:
-            ofBackground(255, 255, 0);
+            ofSetColor(255, 255, 0);
+            ofRect(0.0f, 0.0f, 100.0f, 100.0f);
             break;
             
     }
+    
+    //draw circle
+    ofSetColor(255,255,255,220);
+    ofCircle(ofGetWidth()/2.0f, ofGetHeight()/2.0f, CIRCLE_SIZE*adsr.update());
+    
+    
     
     ofSetColor(255);
     ofDrawBitmapString("fps = " + ofToString(ofGetFrameRate()), 10, 20);
@@ -117,8 +132,58 @@ void ofApp::event(event_type tag, void *param){
     if(tag=="changeScreenColor"){
         color_e *tmp = (color_e *)param;
         sc_color = *tmp;
-    }
+    }else if (tag=="TRG_ADSR"){
         
+        command_e *pcmd = (command_e *)param;
+        command_e cmd = *pcmd;
+
+        adsr_t param;
+        
+        switch(cmd){
+                
+            case FAST:
+                cout << "TRG_FAST" << endl;
+                param.attack = 0;
+                param.decay = 150;
+                param.sustain = 0.5f;
+                param.duration = 0;
+                param.release = 0;
+                adsr.setup(param);
+                adsr.bang();
+                break;
+
+            case MID:
+                cout << "TRG_MID" << endl;
+                param.attack = 190;
+                param.decay = 630;
+                param.sustain = 0.5f;
+                param.duration = 1200;
+                param.release = 1200;
+                adsr.setup(param);
+                adsr.bang();
+                break;
+
+            case SLOW:
+                cout << "TRG_SLOW" << endl;
+                param.attack = 1250;
+                param.decay = 2400;
+                param.sustain = 0.5f;
+                param.duration = 4000;
+                param.release = 2500;
+                adsr.setup(param);
+                adsr.bang();
+                break;
+
+            default:
+                break;
+                
+                
+        }
+        
+        
+    }
+    
+
 }
 
 
