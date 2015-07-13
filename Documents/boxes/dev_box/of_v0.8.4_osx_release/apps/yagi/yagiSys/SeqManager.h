@@ -11,9 +11,17 @@
 
 #include <stdio.h>
 #include "slSequencer.h"
+#include "setup.h"
 
 typedef enum {TEST2, FAST, MID, SLOW} command_e;
 typedef enum {RED,GREEN,BLUE,BLACK} color_e;
+typedef struct note_t { //Using trigger with duration (=sustain_time)
+    
+    command_e cmd;
+    int number;
+    float duration;
+    
+}note_t;
 
 class SeqManager : public slSequencer {
   

@@ -10,6 +10,8 @@
 
 void SeqManager::executeOneQuantum(quantum *q){
     
+    //change behavior according to the app type
+#ifdef APP_BASIC
     command_e cmd = (command_e)q->cmd;
     
  
@@ -34,13 +36,41 @@ void SeqManager::executeOneQuantum(quantum *q){
             
             
     }
+    
+#elif defined APP_ASUNA
+    
+    note_t note;
+    note.cmd = (command_e)q->cmd;
+    note.number = (int)q->param1;
+    note.duration = q->param2;
+    
+    
+    switch(note.cmd){
+            
+        case TEST2:
+            sc_color = (color_e)q->param1;
+            notice->notify("changeScreenColor", &sc_color);
+            break;
+            
+        case FAST:
+            notice->notify("TRG_ADSR", &note); //invoke animation in ofApp.cpp
+            break;
+            
+        case MID:
+            notice->notify("TRG_ADSR", &note); //invoke animation in ofApp.cpp
+            break;
+            
+        case SLOW:
+            notice->notify("TRG_ADSR", &note); //invoke animation in ofApp.cpp
+            break;
+            
+            
+    }
+    
+#endif
 
     
-//    if((command_e)q->cmd==TEST2){
-//         sc_color = (color_e)q->param1;
-//         notice->notify("changeScreenColor", &sc_color);
-//         q->done = true;
-//    }
+
     
     
 }

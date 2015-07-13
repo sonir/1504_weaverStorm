@@ -40,7 +40,15 @@ void ofApp::draw(){
     yagi.draw();
     
     ofSetColor(255);
-    ofDrawBitmapString("fps = " + ofToString(ofGetFrameRate()), 10, 20);
+
+#ifdef APP_BASIC
+    ofDrawBitmapString("APP: BASIC", 10, 20);
+#elif defined APP_ASUNA
+    ofDrawBitmapString("APP_MODE: ASUNA" , 10, 20);
+#endif
+    
+    
+    ofDrawBitmapString("fps = " + ofToString(ofGetFrameRate()), 10, 40);
     
 }
 

@@ -10,12 +10,13 @@
 
 void Osc::fireMessage(ofxOscMessage *m){
     
+    
     if(m->getAddress() == "/test137"){
         
         float fnum = m->getArgAsFloat(0);
         ofNotifyEvent(test1, fnum);
         
-    }else if(m->getAddress() == "/seq/event"){
+    }else if(m->getAddress() == seq_adr){
         
         SequenceData s;
         s.st = (time_t)m->getArgAsInt32(0);

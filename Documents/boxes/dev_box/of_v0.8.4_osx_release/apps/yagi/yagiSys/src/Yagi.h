@@ -27,6 +27,7 @@
 #include "slObserver.h"
 #include "SeqManager.h"
 #include "slAdsr.h"
+#include "setup.h"
 
 
 class YagiApp : public slAppManager, slObserver {

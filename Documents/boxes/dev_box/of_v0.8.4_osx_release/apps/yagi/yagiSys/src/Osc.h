@@ -13,7 +13,8 @@
 #include <stdio.h>
 #include "slOscManager.h"
 #include "ofApp.h"
-//#include "setup.h"
+#include "setup.h"
+
 class ofApp;
 
 class Osc : public slOscManager{
@@ -24,10 +25,19 @@ class Osc : public slOscManager{
         
             ofapp = app_adr;
             
+#ifdef APP_BASIC
+            seq_adr = "/seq/event";
+#elif defined APP_ASUNA
+            seq_adr = "/seq/event/asuna";
+#endif
+            
         }
 
         ofApp *ofapp;
         void fireMessage(ofxOscMessage *m);
+    
+    private:
+        string seq_adr;
 
     
 };

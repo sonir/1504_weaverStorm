@@ -8,6 +8,10 @@
 
 #include "Yagi.h"
 
+//FunctionProtoType
+void setAdsrWithDuration(note_t note, adsr_t *param);
+void setAdsr(command_e cmd, adsr_t *param);
+
 void YagiApp::setup(){
 
     //Setup Event Manager
@@ -87,6 +91,7 @@ void YagiApp::drawCircles(){
     
 }
 
+
 //--------------------------------------------------------------
 void YagiApp::event(event_type tag, void *param){
     //using void type EXAMPLE: int *num = (int *)param;
@@ -96,62 +101,130 @@ void YagiApp::event(event_type tag, void *param){
         sc_color = *tmp;
     }else if (tag=="TRG_ADSR"){
         
+
+#ifdef APP_BASIC
         command_e *pcmd = (command_e *)param;
         command_e cmd = *pcmd;
         
         adsr_t param;
         int num=ofRandom(CIRCLE_NUM);
+        setAdsr(cmd, &param);
         
-        switch(cmd){
-                
-            case FAST:
-#ifdef DEBUG
-                cout << "TRG_FAST" << endl;
-#endif
-                param.attack = 0;
-                param.decay = 150;
-                param.sustain = 0.5f;
-                param.duration = 0;
-                param.release = 0;
-                break;
-                
-            case MID:
-#ifdef DEBUG
-                cout << "TRG_MID" << endl;
-#endif
-                param.attack = 190;
-                param.decay = 630;
-                param.sustain = 0.5f;
-                param.duration = 1200;
-                param.release = 1200;
-                break;
-                
-            case SLOW:
-#ifdef DEBUG
-                cout << "TRG_SLOW" << endl;
-#endif
-                param.attack = 1250;
-                param.decay = 2400;
-                param.sustain = 0.5f;
-                param.duration = 4000;
-                param.release = 2500;
-                break;
-                
-            default:
-                break;
-                
-                
-        }
+#elif defined APP_ASUNA
+        note_t *note = (note_t *)param;
+        note_t tmp_note = *note;
         
-#ifdef DEBUG
-        cout << "adsr=" << num << endl;
+        adsr_t param;
+        int num=ofRandom(CIRCLE_NUM);
+        
+        setAdsrWithDuration(tmp_note, &param);        
 #endif
+        
         //Trigger circle with specified ADSR
         adsr[num].setup(param);
         adsr[num].bang();
+
         
         
     }
     
+    
+}
+
+
+// C Func //////////////////////
+
+void setAdsr(command_e cmd, adsr_t *param){
+    
+    switch(cmd){
+            
+        case FAST:
+#ifdef DEBUG
+            cout << "TRG_FAST" << endl;
+#endif
+            param->attack = 0;
+            param->decay = 150;
+            param->sustain = 0.5f;
+            param->duration = 0;
+            param->release = 0;
+            break;
+            
+        case MID:
+#ifdef DEBUG
+            cout << "TRG_MID" << endl;
+#endif
+            param->attack = 190;
+            param->decay = 630;
+            param->sustain = 0.5f;
+            param->duration = 1200;
+            param->release = 1200;
+            break;
+            
+        case SLOW:
+#ifdef DEBUG
+            cout << "TRG_SLOW" << endl;
+#endif
+            param->attack = 1250;
+            param->decay = 2400;
+            param->sustain = 0.5f;
+            param->duration = 4000;
+            param->release = 2500;
+            break;
+            
+        default:
+            break;
+            
+            
+    }
+
+    
+}
+
+void setAdsrWithDuration(note_t note, adsr_t *param){
+    
+    switch(note.cmd){
+            
+        case FAST:
+#ifdef DEBUG
+            cout << "TRG_FAST" << endl;
+#endif
+            param->attack = 4300;
+            param->decay = 1;
+            param->sustain = 1.0f;
+            param->duration = note.duration*1000;
+            param->release = 13800;
+            break;
+            
+        case MID:
+#ifdef DEBUG
+            cout << "TRG_MID" << endl;
+#endif
+            param->attack = 4300;
+            param->decay = 1;
+            param->sustain = 1.0f;
+            param->duration = note.duration*1000;
+            param->release = 13800;
+            break;
+            
+        case SLOW:
+#ifdef DEBUG
+            cout << "TRG_SLOW" << endl;
+#endif
+            param->attack = 4300;
+            param->decay = 1;
+            param->sustain = 1.0f;
+            param->duration = note.duration*1000;
+            param->release = 13800;
+            break;
+            
+        default:
+            break;
+            
+            
+    }
+    
+#ifdef DEBUG
+    cout << "adsr=" << num << endl;
+#endif
     
 }
